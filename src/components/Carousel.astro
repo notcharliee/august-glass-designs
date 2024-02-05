@@ -8,20 +8,20 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<div class="flex gap-4 min-w-[21rem] h-screen overflow-hidden group fixed top-0 left-1/2 -translate-x-1/2 -z-10 opacity-20 sm:sticky sm:left-0 sm:-translate-x-0 sm:z-0 sm:opacity-100 sm:mr-10">
+<div class="flex gap-4 w-[21rem] h-full overflow-hidden group">
   <div class="min-w-40 h-full flex flex-col gap-4 animate-[scroll_10s_linear_infinite] group-hover:[animation-play-state:_paused]">
     {items.slice(0, 6).map(item => 
       <img
         src={item.src}
         alt="carousel item"
-        class="border border-secondary object-cover w-full h-[200px] min-h-[200px] rounded-md duration-200ms hover:scale-95"
+        class="border border-secondary object-cover w-full h-[200px] min-h-[200px] rounded-md duration-200 hover:scale-95"
       >
     )}
     {items.slice(0, 6).map(item => 
       <img
         src={item.src}
         alt="carousel item"
-        class="border border-secondary object-cover w-full h-[200px] min-h-[200px] rounded-md duration-200ms hover:scale-95"
+        class="border border-secondary object-cover w-full h-[200px] min-h-[200px] rounded-md duration-200 hover:scale-95"
       >
     )}
   </div>
@@ -30,14 +30,14 @@ const { items } = Astro.props;
       <img
         src={item.src}
         alt="carousel item"
-        class="border border-secondary object-cover w-full h-[200px] min-h-[200px] rounded-md duration-200ms hover:scale-95"
+        class="border border-secondary object-cover w-full h-[200px] min-h-[200px] rounded-md duration-200 hover:scale-95"
       >
     )}
     {items.slice(6, 12).map(item => 
       <img
         src={item.src}
         alt="carousel item"
-        class="border border-secondary object-cover w-full h-[200px] min-h-[200px] rounded-md duration-200ms hover:scale-95"
+        class="border border-secondary object-cover w-full h-[200px] min-h-[200px] rounded-md duration-200 hover:scale-95"
       >
     )}
   </div>
