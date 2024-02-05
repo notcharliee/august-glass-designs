@@ -14,7 +14,7 @@ const {
 } = Astro.props;
 ---
 
-<div class="space-y-6 p-4 border border-secondary rounded-md backdrop-blur-sm sm:backdrop-blur-none">
+<div class="space-y-6 p-4 border border-secondary rounded-md">
   <div class="flex justify-between">
     <div class="flex gap-4">
       <img src="/default_avatar.png" alt="User Avatar" class="border border-secondary rounded-full h-12 w-12 sm:h-[75px] sm:w-[75px]">
@@ -41,5 +41,5 @@ const {
     </div>
     <img src={item} alt="Item Bought" class="border border-secondary rounded-md h-12 w-12 sm:h-[75px] sm:w-[75px]">
   </div>
-  <p>"{message}"</p>
+  <p class="text-lg md:tet-xl lg:text-2xl">"{message}"</p>
 </div>
