@@ -94,5 +94,32 @@ import Carousel from "../components/Carousel.astro"
 				</a>
 			</div>
 		</section>
+		<!-- Learn More -->
+		<section class="space-y-12 md:space-y-12">
+			<div>
+				<h2>learn more</h2>
+				<p>Click a card below to go to a page.</p>
+			</div>
+			<div class="space-y-8 md:space-y-10">
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+					<a href="/blog" class="border border-secondary rounded-md shadow-lg" data-astro-prefetch>
+						<h4 class="text-primary text-xl lg:text-2xl p-4 py-2 border-b border-secondary">
+							my blog
+						</h4>
+						<div class="p-4 space-y-3">
+							<p class="text-xl lg:text-2xl">Interested in my work and want to learn more? I have a blog!</p>
+						</div>
+					</a>
+					<a href="/info/custom-orders" class="border border-secondary rounded-md shadow-lg" data-astro-prefetch>
+						<h4 class="text-primary text-xl lg:text-2xl p-4 py-2 border-b border-secondary">
+							custom orders
+						</h4>
+						<div class="p-4 space-y-3">
+							<p class="text-xl lg:text-2xl">Want a bespoke item? Learn more about it here.</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
 	</main>
 </Layout>
