@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-primary;
+    font-family: 'DM Serif Text', serif;
+  }
+
+  h1 {
+    @apply text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] tracking-tighter leading-[0.9];
+    font-family: 'DM Serif Display', serif;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.9];
+    font-family: 'DM Serif Display', serif;
+  }
+
+  p {
+    @apply text-xl md:text-2xl lg:text-3xl tracking-tight text-secondary;
+  }
+}
