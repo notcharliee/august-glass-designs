@@ -1,5 +1,6 @@
 {
-  "name": "",
+  "private": "true",
+  "name": "august-glass-designs",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
