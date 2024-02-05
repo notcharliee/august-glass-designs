@@ -2,8 +2,8 @@
 import { ViewTransitions } from "astro:transitions"
 
 interface Props {
-	title: string;
-	description: string,
+	title?: string;
+	description?: string,
 }
 
 const {
@@ -16,14 +16,14 @@ const {
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
+		<meta name="description" content={description ?? "Terrariums, home decor and glass gifts. Handmade in England."} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
-		<title>{title}</title>
+		<title>{title ? title + " - August Glass Designs" : "August Glass Designs"}</title>
 		<ViewTransitions />
 	</head>
 	<body class="min-h-screen grid place-items-center">
