@@ -1,8 +1,11 @@
 ---
 import Layout from "~/layouts/Layout.astro"
 
+import BlogCard from "~/components/BlogCard.astro"
 import Carousel from "~/components/Carousel.astro"
 import Review from "~/components/Review.astro"
+
+const posts = await Astro.glob("./blog/*.md")
 ---
 
 <Layout>
@@ -93,27 +96,28 @@ import Review from "~/components/Review.astro"
 		<section class="space-y-12 md:space-y-12">
 			<div>
 				<h2>learn more</h2>
-				<p>Click a card below to go to a page.</p>
+				<p>Click a card below to go to a recent blog article.</p>
 			</div>
 			<div class="space-y-8 md:space-y-10">
-				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-					<a
-						class="border border-secondary rounded-md shadow-lg"
-						href="/blog"
-						data-astro-prefetch
-					>
-						<h5 class="p-4 py-2 border-b border-secondary">my blog</h5>
-						<p class="p-4">Interested in my work and want to learn more? I have a blog!</p>
-					</a>
-					<a
-						class="border border-secondary rounded-md shadow-lg"
-						href="/info/custom-orders"
-						data-astro-prefetch
-					>
-						<h5 class="p-4 py-2 border-b border-secondary">custom orders</h5>
-						<p class="p-4">Want a bespoke item? Learn more about it here.</p>
-					</a>
+				<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:[&>*]:hidden lg:[&>*:nth-child(-n+3)]:block">
+					{posts.slice(0, 4).map((post, index) => (
+						<BlogCard
+							title={post.frontmatter.title}
+							description={post.frontmatter.description}
+							image={post.frontmatter.image}
+							alt={post.frontmatter.alt}
+							href={post.url}
+							class:list={index === 2 ? "sm:hidden lg:block" : undefined}
+						/>
+					))}
 				</div>
+				<a
+					href="/blog"
+					class="bg-primary text-background hover:bg-secondary hover:text-white duration-200 text-center px-6 py-3 rounded-full text-xl block sm:inline-block"
+					data-astro-prefetch
+				>
+					View More ({posts.length})
+				</a>
 			</div>
 		</section>
 	</main>
