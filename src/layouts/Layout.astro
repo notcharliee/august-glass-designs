@@ -63,15 +63,15 @@ const {
 				}
 
 				h1, h2, h3, h4, h5 {
-					@apply tracking-tighter leading-[0.9] text-primary;
+					@apply text-primary leading-[0.9];
 					font-family: 'DM Serif Display', serif;
 				}
 
-				h1 { @apply text-6xl lg:text-7xl; }
-				h2 { @apply text-4xl sm:text-5xl; }
-				h3 { @apply text-4xl; }
-				h4 { @apply text-3xl; }
-				h5 { @apply text-2xl; }
+				h1 { @apply text-6xl lg:text-7xl tracking-tighter; }
+				h2 { @apply text-4xl sm:text-5xl tracking-tighter; }
+				h3 { @apply text-3xl sm:text-4xl tracking-tighter; }
+				h4 { @apply text-2xl sm:text-3xl; }
+				h5 { @apply text-xl sm:text-2xl; }
 			}
 		</style>
 	</body>
