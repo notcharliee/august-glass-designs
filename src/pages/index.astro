@@ -68,56 +68,37 @@ const posts = await Astro.glob("./blog/**/*.md")
 				]} />
 			</aside>
 		</section>
-		<!-- my blog -->
-		<section class="space-y-12 md:space-y-12">
-			<div>
-				<h2>my blog</h2>
-				<p>Click a card below to go to a recent blog article.</p>
-			</div>
-			<div class="space-y-8 md:space-y-10">
-				<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:[&>*]:hidden lg:[&>*:nth-child(-n+3)]:block">
-					{posts.slice(0, 4).map((post, index) => (
-						<BlogCard
-							title={post.frontmatter.title}
-							description={post.frontmatter.description}
-							image={post.frontmatter.image}
-							alt={post.frontmatter.alt}
-							href={post.url}
-							class:list={index === 2 ? "sm:hidden lg:block" : undefined}
-						/>
-					))}
-				</div>
-				<a
-					href="/blog"
-					class="bg-primary text-background hover:bg-secondary hover:text-white duration-200 text-center px-6 py-3 rounded-full text-xl block sm:inline-block"
-					data-astro-prefetch
-				>
-					View All ({posts.length})
-				</a>
-			</div>
-		</section>
 		<!-- faq -->
 		<section class="space-y-12 md:space-y-12">
 			<div>
-				<h2>faq</h2>
+				<h2>shop faq</h2>
 				<p>Answers to frequently asked questions.</p>
 			</div>
 			<div class="grid gap-4">
-				<Accordion name="Lorem Ipsum 1">
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad ipsum odit neque accusantium pariatur deleniti? Architecto velit similique tempore dicta sit pariatur, delectus voluptatibus? Commodi, ex! Explicabo aliquam vero neque?
+				<Accordion name="How long does delivery take?">
+					Delivery details are unique to the item you're buying so check for that information when browsing the shop.
+					<br>
+					<br>
+					Buyers are responsible for any customs and import taxes that may apply. I'm not responsible for delays due to customs.
 				</Accordion>
-				<Accordion name="Lorem Ipsum 2">
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad ipsum odit neque accusantium pariatur deleniti? Architecto velit similique tempore dicta sit pariatur, delectus voluptatibus? Commodi, ex! Explicabo aliquam vero neque?
+				<Accordion name="What's your return & cancellation policy?">
+					Return details are unique to the item you're buying so check for that information when browsing the shop.
+					<br>
+					<br>
+					You may request a cancellation on an order within 2 days of purchase.
 				</Accordion>
-				<Accordion name="Lorem Ipsum 3">
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad ipsum odit neque accusantium pariatur deleniti? Architecto velit similique tempore dicta sit pariatur, delectus voluptatibus? Commodi, ex! Explicabo aliquam vero neque?
+				<Accordion name="How can I request a custom order?">
+					You'll need to <a href="/contact" class="underline underline-offset-4 text-primary font-medium" data-astro-prefetch>contact me</a> directly to request a custom order.
+					<br>
+					<br>
+					For more information on bespoke items and made-to-measure boxes, please see <a href="/blog/how-to-request-a-custom-order" class="underline underline-offset-4 text-primary font-medium" data-astro-prefetch>this blog article</a> I wrote.
 				</Accordion>
 			</div>
 		</section>
 		<!-- Reviews -->
 		<section class="space-y-12 md:space-y-12">
 			<div>
-				<h2>recent reviews</h2>
+				<h2>shop reviews</h2>
 				<p>I average 5 stars on Etsy!</p>
 			</div>
 			<div class="space-y-8 md:space-y-10">
@@ -154,6 +135,34 @@ const posts = await Astro.glob("./blog/**/*.md")
 					referrerpolicy="no-referrer"
 				>
 					View More (1000+)
+				</a>
+			</div>
+		</section>
+		<!-- my blog -->
+		<section class="space-y-12 md:space-y-12">
+			<div>
+				<h2>my blog</h2>
+				<p>Click a card below to go to a recent blog article.</p>
+			</div>
+			<div class="space-y-8 md:space-y-10">
+				<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:[&>*]:hidden lg:[&>*:nth-child(-n+3)]:block">
+					{posts.slice(0, 4).map((post, index) => (
+						<BlogCard
+							title={post.frontmatter.title}
+							description={post.frontmatter.description}
+							image={post.frontmatter.image}
+							alt={post.frontmatter.alt}
+							href={post.url}
+							class:list={index === 2 ? "sm:hidden lg:block" : undefined}
+						/>
+					))}
+				</div>
+				<a
+					href="/blog"
+					class="bg-primary text-background hover:bg-secondary hover:text-white duration-200 text-center px-6 py-3 rounded-full text-xl block sm:inline-block"
+					data-astro-prefetch
+				>
+					View All ({posts.length})
 				</a>
 			</div>
 		</section>
