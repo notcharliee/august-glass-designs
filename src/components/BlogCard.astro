@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string,
+  description: string,
+  image?: string,
+  alt?: string,
+  href?: string,
+}
+
+const {
+  title,
+  description,
+  image,
+  alt,
+  href
+} = Astro.props
+---
+
+<>{href ? (
+  <a
+    class="border border-secondary rounded-md shadow-lg"
+    href={href}
+  >
+    {image && (
+      <img
+        src={image}
+        alt={alt}
+        class="object-cover w-full h-40"
+      />
+    )}
+    <div class="p-4 py-2 border-t border-secondary space-y-6">
+      <h5>{title}</h5>
+      <p class="line-clamp-4">{description}</p>
+    </div>
+  </a>
+) : (
+  <div class="border border-secondary rounded-md shadow-lg">
+    {image && (
+      <img
+        src={image}
+        alt={alt}
+        class="object-cover w-full h-40"
+      />
+    )}
+    <div class="p-4 py-2 border-t border-secondary space-y-6">
+      <h5>{title}</h5>
+      <p class="line-clamp-4">{description}</p>
+    </div>
+  </div>
+)}</>
