@@ -30,6 +30,24 @@ const posts = await Astro.glob("./blog/*.md")
 					<p>
 						Oh yes and I have a ginger dog, who doesn’t care about anyone but himself but is still a good sidekick.
 					</p>
+					<div class="flex flex-col sm:flex-row gap-4">
+						<a
+							href="https://www.etsy.com/uk/shop/AugustGlassDesigns#items"
+							class="bg-primary text-background hover:bg-secondary hover:text-white duration-200 text-center px-6 py-3 rounded-full text-xl block sm:inline-block"
+							target="_blank"
+							referrerpolicy="no-referrer"
+						>
+							Shop Online
+						</a>
+						<a
+							href="/contact"
+							class="border border-secondary hover:bg-secondary hover:text-white duration-200 text-center px-6 py-3 rounded-full text-xl block sm:inline-block"
+							target="_blank"
+							referrerpolicy="no-referrer"
+						>
+							Contact Me
+						</a>
+					</div>
 				</div>
 			</div>
 			<aside class="sticky top-16 h-[calc(100vh-8rem)] hidden lg:block">
