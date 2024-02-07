@@ -6,7 +6,7 @@ interface Props {
 const { name } = Astro.props
 ---
 
-<label for={`${name}-accordion`} class="border border-secondary rounded-md shadow-lg overflow-hidden cursor-pointer select-none">
+<label for={`${name}-accordion`} class="border rounded-md shadow-lg overflow-hidden cursor-pointer select-none">
   <input type="checkbox" id={`${name}-accordion`} class="hidden peer">
   <div class="py-2 px-4 peer-checked:border-b peer-checked:border-secondary flex justify-between items-center group">
     <h5>{name}</h5>
