@@ -6,8 +6,6 @@ image: "/items/custom.jpg"
 alt: "Custom Order"
 ---
 
-# How to request a custom order
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget justo vel lacus tincidunt cursus. Vestibulum fermentum, arcu at tristique pellentesque, mauris est dignissim leo, non accumsan odio metus eu justo. Integer ac urna a dolor eleifend consectetur.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget justo vel lacus tincidunt cursus. Vestibulum fermentum, arcu at tristique pellentesque, mauris est dignissim leo, non accumsan odio metus eu justo. Integer ac urna a dolor eleifend consectetur.

@@ -17,8 +17,14 @@ const { frontmatter } = Astro.props
 <Layout
   title={frontmatter.title}
   description={frontmatter.description}
+  og_image={frontmatter.image}
+  og_type="article"
 >
-	<main class="w-full max-w-[1300px] p-12 md:p-16 space-y-6 md:space-y-10">
+  <div class="space-y-2">
+    <h1 class="balance">{frontmatter.title}</h1>
+    <p class="balance">{frontmatter.description}</p>
+  </div>
+  <div class="space-y-6 md:space-y-10">
     <slot />
-	</main>
+  </div>
 </Layout>
