@@ -1,0 +1,27 @@
+---
+interface Props {
+  href: string,
+  variant: "primary" | "secondary" | "link",
+  external?: boolean,
+}
+
+const {
+  href,
+  external,
+  variant,
+} = Astro.props
+---
+
+<a
+  href={href}
+  class:list={[
+    { "underline underline-offset-4 text-primary font-medium": variant === "link" },
+    { "bg-primary text-background hover:bg-secondary hover:text-white duration-200 text-center px-6 py-3 rounded-full text-xl block sm:inline-block": variant === "primary" },
+    { "bg-background text-primary hover:bg-secondary hover:text-white duration-200 text-center px-6 py-3 rounded-full text-xl block sm:inline-block border": variant === "secondary" },
+  ]}
+  target={external ? "_blank" : undefined}
+  referrerpolicy={external ? "no-referrer" : undefined}
+  data-astro-prefetch={!external}
+>
+  <slot />
+</a>
