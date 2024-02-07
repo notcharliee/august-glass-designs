@@ -7,18 +7,16 @@ const posts = await Astro.glob("./**/*.md")
 ---
 
 <Layout title="Blog">
-  <main class="w-full max-w-[1300px] p-12 md:p-16 space-y-8 md:space-y-12">
-    <h1>my blog</h1>
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {posts.map(post => (
-        <BlogCard
-          title={post.frontmatter.title}
-          description={post.frontmatter.description}
-          image={post.frontmatter.image}
-          alt={post.frontmatter.alt}
-          href={post.url}
-        />
-      ))}
-    </div>
-  </main>
+  <h1>my blog</h1>
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {posts.map(post => (
+      <BlogCard
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        image={post.frontmatter.image}
+        alt={post.frontmatter.alt}
+        href={post.url}
+      />
+    ))}
+  </div>
 </Layout>

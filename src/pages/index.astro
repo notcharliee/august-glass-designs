@@ -4,167 +4,135 @@ import Layout from "~/layouts/Layout.astro"
 import Accordion from "~/layouts/Accordion.astro"
 import BlogCard from "~/components/BlogCard.astro"
 import Carousel from "~/components/Carousel.astro"
+import Link from "~/components/Link.astro"
 import Review from "~/components/Review.astro"
 
 const posts = await Astro.glob("./blog/**/*.md")
 ---
 
 <Layout>
-	<main class="w-full max-w-[1300px] p-12 md:p-16 space-y-20 md:space-y-24">
-		<!-- Intro -->
-		<section class="lg:min-h-screen flex gap-32 relative"> 
-			<div class="space-y-12 md:space-y-12">
-				<h1 class="lg:text-8xl">august glass designs</h1>
-				<div class="space-y-8 md:space-y-10">
-					<p>
-						Crafting quality, handmade, eco friendly glass decor since 2014.
-					</p>
-					<p>
-						Many years ago, a very clever person taught me how to work with glass, using the Tiffany method to create simple terrariums. Since then, I've been creating all sorts of glass bits and bobs in my Sussex workshop.
-					</p>
-					<p>
-						I create a variety of items, ranging in size. Larger glass items can be collected from me directy at my workshop.
-					</p>
-					<p>
-						Custom orders are welcome and any of my existing designs can be adapted whenever possible. I’m happy to combine shipping on more than one item ordered, just ask for more details.
-					</p>
-					<p>
-						Oh yes and I have a ginger dog, who doesn’t care about anyone but himself but is still a good sidekick.
-					</p>
-					<div class="flex flex-col sm:flex-row gap-4">
-						<a
-							href="https://www.etsy.com/uk/shop/AugustGlassDesigns#items"
-							class="bg-primary text-background hover:bg-secondary hover:text-white duration-200 text-center px-6 py-3 rounded-full text-xl block sm:inline-block"
-							target="_blank"
-							referrerpolicy="no-referrer"
-						>
-							Browse Shop
-						</a>
-						<a
-							href="/contact"
-							class="border border-secondary hover:bg-secondary hover:text-white duration-200 text-center px-6 py-3 rounded-full text-xl block sm:inline-block"
-							target="_blank"
-							referrerpolicy="no-referrer"
-						>
-							Contact Me
-						</a>
-					</div>
-				</div>
-			</div>
-			<aside class="sticky top-16 h-[calc(100vh-8rem)] hidden lg:block">
-				<Carousel items={[
-					{ src: "/items/a.jpg" },
-					{ src: "/items/b.jpg" },
-					{ src: "/items/c.jpg" },
-					{ src: "/items/d.jpg" },
-					{ src: "/items/e.jpg" },
-					{ src: "/items/f.jpg" },
-					{ src: "/items/g.jpg" },
-					{ src: "/items/h.jpg" },
-					{ src: "/items/i.jpg" },
-					{ src: "/items/j.jpg" },
-					{ src: "/items/k.jpg" },
-					{ src: "/items/l.jpg" },
-				]} />
-			</aside>
-		</section>
-		<!-- faq -->
-		<section class="space-y-12 md:space-y-12">
-			<div>
-				<h2>shop faq</h2>
-				<p>Answers to frequently asked questions.</p>
-			</div>
-			<div class="grid gap-4">
-				<Accordion name="How long does delivery take?">
-					Delivery details are unique to the item you're buying so check for that information when browsing the shop.
-					<br>
-					<br>
-					Buyers are responsible for any customs and import taxes that may apply. I'm not responsible for delays due to customs.
-				</Accordion>
-				<Accordion name="What's your return & cancellation policy?">
-					Return details are unique to the item you're buying so check for that information when browsing the shop.
-					<br>
-					<br>
-					You may request a cancellation on an order within 2 days of purchase.
-				</Accordion>
-				<Accordion name="How can I request a custom order?">
-					You'll need to <a href="/contact" class="underline underline-offset-4 text-primary font-medium" data-astro-prefetch>contact me</a> directly to request a custom order.
-					<br>
-					<br>
-					For more information on bespoke items and made-to-measure boxes, please see <a href="/blog/how-to-request-a-custom-order" class="underline underline-offset-4 text-primary font-medium" data-astro-prefetch>this blog article</a> I wrote.
-				</Accordion>
-			</div>
-		</section>
-		<!-- Reviews -->
-		<section class="space-y-12 md:space-y-12">
-			<div>
-				<h2>shop reviews</h2>
-				<p>I average 5 stars on Etsy!</p>
-			</div>
+	<section class="lg:min-h-screen flex gap-32 relative"> 
+		<div class="space-y-12 md:space-y-12">
+			<h1 class="lg:text-8xl">august glass designs</h1>
 			<div class="space-y-8 md:space-y-10">
-				<div class="grid md:grid-cols-2 gap-4">
-					<Review
-						name="Helen"
-						message="Love this glass storage. Looks amazing. Beautifully made. Was packaged really well and arrived quickly and safely. Would definitely recommend. Thank you"
-						rating={5}
-						item="/items/k.jpg"
-					/>
-					<Review
-						name="Sarah"
-						message="I'm a regular customer as the products are always of a very good, consistent quality. Exactly what I need them for. Thank you!"
-						rating={5}
-						item="/items/a.jpg"
-					/>
-					<Review
-						name="Gill"
-						message="Beautiful silver glass box. Used to display my special ghost. Arrived extremely well packaged. I’m very pleased, thank you."
-						rating={5}
-						item="/items/g.jpg"
-					/>
-					<Review
-						name="Anthony"
-						message="Jacky has been fantastic. I love my glass pyramid; it looks fabulous with my collection of little ceramic eggs! Totally brilliant service from Jacky from start to finish. I am totally impressed! TMD"
-						rating={5}
-						item="/items/m.jpg"
-					/>
+				<p>
+					Crafting quality, handmade, eco friendly glass decor since 2014.
+				</p>
+				<p>
+					Many years ago, a very clever person taught me how to work with glass, using the Tiffany method to create simple terrariums. Since then, I've been creating all sorts of glass bits and bobs in my Sussex workshop.
+				</p>
+				<p>
+					I create a variety of items, ranging in size. Larger glass items can be collected from me directy at my workshop.
+				</p>
+				<p>
+					Custom orders are welcome and any of my existing designs can be adapted whenever possible. I’m happy to combine shipping on more than one item ordered, just ask for more details.
+				</p>
+				<p>
+					Oh yes and I have a ginger dog, who doesn’t care about anyone but himself but is still a good sidekick.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4">
+					<Link href="https://www.etsy.com/uk/shop/AugustGlassDesigns#items" variant="primary" external>Browse Shop</Link>
+					<Link href="/contact" variant="secondary">Contact Me</Link>
 				</div>
-				<a
-					href="https://www.etsy.com/uk/shop/AugustGlassDesigns?ref=profile_header#reviews"
-					class="bg-primary text-background hover:bg-secondary hover:text-white duration-200 text-center px-6 py-3 rounded-full text-xl block sm:inline-block"
-					target="_blank"
-					referrerpolicy="no-referrer"
-				>
-					View More (1000+)
-				</a>
 			</div>
-		</section>
-		<!-- my blog -->
-		<section class="space-y-12 md:space-y-12">
-			<div>
-				<h2>my blog</h2>
-				<p>Click a card below to go to a recent blog article.</p>
+		</div>
+		<aside class="sticky top-16 h-[calc(100vh-8rem)] hidden lg:block">
+			<Carousel items={[
+				{ src: "/items/a.jpg" },
+				{ src: "/items/b.jpg" },
+				{ src: "/items/c.jpg" },
+				{ src: "/items/d.jpg" },
+				{ src: "/items/e.jpg" },
+				{ src: "/items/f.jpg" },
+				{ src: "/items/g.jpg" },
+				{ src: "/items/h.jpg" },
+				{ src: "/items/i.jpg" },
+				{ src: "/items/j.jpg" },
+				{ src: "/items/k.jpg" },
+				{ src: "/items/l.jpg" },
+			]} />
+		</aside>
+	</section>
+	<section class="space-y-12 md:space-y-12">
+		<div>
+			<h2>shop faq</h2>
+			<p>Answers to frequently asked questions.</p>
+		</div>
+		<div class="grid gap-4">
+			<Accordion name="How long does delivery take?">
+				Delivery details are unique to the item you're buying so check for that information when browsing the shop.
+				<br>
+				<br>
+				Buyers are responsible for any customs and import taxes that may apply. I'm not responsible for delays due to customs.
+			</Accordion>
+			<Accordion name="What's your return & cancellation policy?">
+				Return details are unique to the item you're buying so check for that information when browsing the shop.
+				<br>
+				<br>
+				You may request a cancellation on an order within 2 days of purchase.
+			</Accordion>
+			<Accordion name="How can I request a custom order?">
+				You'll need to <Link href="/contact" variant="link">contact me</Link> directly to request a custom order.
+				<br>
+				<br>
+				For more information on bespoke items and made-to-measure boxes, please see <Link href="/how-to-request-a-custom-order" variant="link">this blog article</Link> I wrote.
+			</Accordion>
+		</div>
+	</section>
+	<section class="space-y-12 md:space-y-12">
+		<div>
+			<h2>shop reviews</h2>
+			<p>I average 5 stars on Etsy!</p>
+		</div>
+		<div class="space-y-8 md:space-y-10">
+			<div class="grid md:grid-cols-2 gap-4">
+				<Review
+					name="Helen"
+					message="Love this glass storage. Looks amazing. Beautifully made. Was packaged really well and arrived quickly and safely. Would definitely recommend. Thank you"
+					rating={5}
+					item="/items/k.jpg"
+				/>
+				<Review
+					name="Sarah"
+					message="I'm a regular customer as the products are always of a very good, consistent quality. Exactly what I need them for. Thank you!"
+					rating={5}
+					item="/items/a.jpg"
+				/>
+				<Review
+					name="Gill"
+					message="Beautiful silver glass box. Used to display my special ghost. Arrived extremely well packaged. I’m very pleased, thank you."
+					rating={5}
+					item="/items/g.jpg"
+				/>
+				<Review
+					name="Anthony"
+					message="Jacky has been fantastic. I love my glass pyramid; it looks fabulous with my collection of little ceramic eggs! Totally brilliant service from Jacky from start to finish. I am totally impressed! TMD"
+					rating={5}
+					item="/items/m.jpg"
+				/>
 			</div>
-			<div class="space-y-8 md:space-y-10">
-				<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:[&>*]:hidden lg:[&>*:nth-child(-n+3)]:block">
-					{posts.slice(0, 4).map((post, index) => (
-						<BlogCard
-							title={post.frontmatter.title}
-							description={post.frontmatter.description}
-							image={post.frontmatter.image}
-							alt={post.frontmatter.alt}
-							href={post.url}
-							class:list={index === 2 ? "sm:hidden lg:block" : undefined}
-						/>
-					))}
-				</div>
-				<a
-					href="/blog"
-					class="bg-primary text-background hover:bg-secondary hover:text-white duration-200 text-center px-6 py-3 rounded-full text-xl block sm:inline-block"
-					data-astro-prefetch
-				>
-					View All ({posts.length})
-				</a>
+			<Link href="https://www.etsy.com/uk/shop/AugustGlassDesigns?ref=profile_header#reviews" variant="primary" external>View More (1000+)</Link>
+		</div>
+	</section>
+	<section class="space-y-12 md:space-y-12">
+		<div>
+			<h2>my blog</h2>
+			<p>Click a card below to go to a recent blog article.</p>
+		</div>
+		<div class="space-y-8 md:space-y-10">
+			<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:[&>*]:hidden lg:[&>*:nth-child(-n+3)]:block">
+				{posts.slice(0, 4).map((post, index) => (
+					<BlogCard
+						title={post.frontmatter.title}
+						description={post.frontmatter.description}
+						image={post.frontmatter.image}
+						alt={post.frontmatter.alt}
+						href={post.url}
+						class:list={index === 2 ? "sm:hidden lg:block" : undefined}
+					/>
+				))}
 			</div>
-		</section>
-	</main>
+			<Link href="/blog" variant="primary">View All ({posts.length})</Link>
+		</div>
+	</section>
 </Layout>
