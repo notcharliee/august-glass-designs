@@ -11,6 +11,10 @@ export default {
 				"primary": "#141413",
 				"secondary": "#4E4E4B",
 			},
+			fontFamily: {
+				"serif": ["DM Serif Text", "serif"],
+				"display": ["DM Serif Display", "serif"],
+			},
 			keyframes: {
 				"scroll": {
 					"0%": { "transform": "translateY(0%);" },
