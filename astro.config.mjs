@@ -8,4 +8,7 @@ export default defineConfig({
   prefetch: {
     defaultStrategy: "viewport",
   },
+  redirects: {
+    "/contact": "mailto:jacquois@hotmail.co.uk"
+  },
 });
