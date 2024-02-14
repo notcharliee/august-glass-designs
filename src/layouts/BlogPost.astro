@@ -19,8 +19,9 @@ const { frontmatter } = Astro.props
   description={frontmatter.description}
   og_image={frontmatter.image}
   og_type="article"
+  class="max-w-5xl space-y-12 md:space-y-16"
 >
-  <div class="space-y-2">
+  <div class="flex flex-col space-y-2">
     <h1 class="balance">{frontmatter.title}</h1>
     <p class="balance">{frontmatter.description}</p>
   </div>
