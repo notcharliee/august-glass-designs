@@ -45,15 +45,16 @@ description = description ?? "Terrariums, home decor and glass gifts. Handmade i
 		<meta property="og:title" content={title}>
 		<meta property="og:description" content={description}>
 		<meta property="og:type" content={og_type}>
-		<meta property="og:image" content={og_image ?? "/og-image.png"}>
+		<meta property="og:image" content={og_image ? import.meta.env.SITE + og_image : import.meta.env.SITE + "/og-image.png"}>
 		<meta property="og:locale" content="en_GB">
 		<meta property="og:site_name" content="August Glass Designs">
+		<meta property="og:url" content={import.meta.env.SITE}>
 
-		<meta name="twitter:title" content={title}>
-		<meta name="twitter:description" content={description}>
-		<meta name="twitter:image" content={og_image ?? "/og-image.png"}>
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:creator" content="@mostlymayhem">
+		<meta property="twitter:title" content={title}>
+		<meta property="twitter:description" content={description}>
+		<meta property="twitter:image" content={og_image ? import.meta.env.SITE + og_image : import.meta.env.SITE + "/og-image.png"}>
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:creator" content="@mostlymayhem">
 
 		<ViewTransitions />
 	</head>
