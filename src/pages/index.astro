@@ -3,7 +3,7 @@ import Layout from "~/layouts/Layout.astro"
 
 import Accordion from "~/layouts/Accordion.astro"
 import BlogCard from "~/components/BlogCard.astro"
-import Carousel from "~/components/Carousel.astro"
+import ImageCarousel from "~/components/ImageCarousel.astro"
 import Link from "~/components/Link.astro"
 import Review from "~/components/Review.astro"
 
@@ -11,168 +11,215 @@ const posts = await Astro.glob("./blog/**/*.md")
 ---
 
 <Layout class="space-y-32 md:space-y-48">
-	<section class="lg:min-h-screen flex gap-32 relative"> 
-		<div class="space-y-12 md:space-y-12">
-			<h1 class="lg:text-8xl">august glass designs</h1>
-			<div class="space-y-8 md:space-y-10">
-				<p>
-					Welcome to my workshop on the Sussex Coast. 
-				</p>
-				<p>
-					I create glass receptacles for your most treasured possessions and I make glass accents for your home from a simple, stylish candle box to an extravagant glass structure in geometric glory. 
-				</p>
-				<p>
-					Many years ago a very clever person taught me how to work with glass, using the traditional Tiffany method to create the much loved terrarium. I still use these traditional techniques today, using the same  top grade materials to produce top quality products. 
-				</p>
-				<p>
-					When I’m not building glass structures, you will find me wandering with my badly behaved ginger dog, obsessing over history, learning to cook, reading and daydreaming.
-				</p>
-				<p>
-					I look forward to working with you.
-					<br/>
-					- Jacky
-				</p>
-			</div>
-			<div class="flex flex-col sm:flex-row gap-4">
-				<Link href="https://www.etsy.com/uk/shop/AugustGlassDesigns#items" variant="primary" external>Browse the Shop</Link>
-				<Link href="/contact" variant="secondary">Contact Me</Link>
-			</div>
-		</div>
-		<aside class="sticky top-16 h-[calc(100vh-8rem)] hidden lg:block">
-			<Carousel items={[
-				{ src: "/items/a.jpg" },
-				{ src: "/items/b.jpg" },
-				{ src: "/items/c.jpg" },
-				{ src: "/items/d.jpg" },
-				{ src: "/items/e.jpg" },
-				{ src: "/items/f.jpg" },
-				{ src: "/items/g.jpg" },
-				{ src: "/items/h.jpg" },
-				{ src: "/items/i.jpg" },
-				{ src: "/items/j.jpg" },
-				{ src: "/items/k.jpg" },
-				{ src: "/items/l.jpg" },
-			]} />
-		</aside>
-	</section>
-	<section class="flex flex-col-reverse sm:grid sm:grid-cols-[auto_auto] sm:place-content-start sm:gap-24 gap-12">
-		<img
-			src="/made-to-measure.jpg"
-			alt="Made to measure"
-			class="sm:h-0 min-h-full object-cover"
-		/>
-		<div class="space-y-6 w-full">
-			<h2>made to measure</h2>
-			<div class="space-y-8 md:space-y-10">
-				<p>
-					One size does not suit all.
-				</p>
-				<p>
-					I have made boxes and cases for all manner of possessions that need the extra space, such as wedding bouquets, museum displays, beloved collections, and even teeny pieces of meteorite. I can create a custom size for you.
-				</p>
-				<p>
-					Please <Link href="/contact" variant="link">contact me</Link> for details of what sizes can be accomplished. 
-				</p>
-			</div>
-		</div>
-	</section>
-	<section class="flex flex-col sm:grid sm:grid-cols-[auto_auto] sm:place-content-start sm:gap-24 gap-12">
-		<div class="space-y-8 w-full">
-			<h2>recycled glass products</h2>
-			<div class="space-y-6 md:space-y-10">
-				<p>
-					These products are made from glass that might already have lived a life in a different form - I will recycle the glass into a new structure.
-				</p>
-				<p>
-					This glass may be sourced from old projects , picture glass, seconds or greenhouse glass. It might have a scratch, a scuff or be off colour. It will show signs of a previous life, but it will be made into excellent, high quality items using the same top materials and dedication.
-				</p>
-			</div>
-		</div>
-		<img
-			src="/recycled-glass-products.jpg"
-			alt="Recycled glass products"
-			class="sm:h-0 min-h-full object-cover"
-		/>
-	</section>
-	<section class="space-y-12 md:space-y-12">
-		<div class="text-center">
-			<h2>shop faq</h2>
-			<p>Answers to frequently asked questions.</p>
-		</div>
-		<div class="grid gap-4">
-			<Accordion name="Do you accept returns?">
-				Custom orders cannot be refunded or exchanged unless faulty
-				<br>
-				<br>
-				It is the responsibility of the buyer to cover cost of return postage and packaging, ensuring the item is packed securely and tracking details are retained. Return costs are not refundable. 
-			</Accordion>
-			<Accordion name="How do I care for my glasswork?">
-				Over time the lead soldered seams on your glasswork may need a freshen up to revive the shine. Simply add a little natural shoe polish to the seams and buff with a soft cloth. The glass can be polished with a clean soft cloth. 
-			</Accordion>
-			<Accordion name="How long will my order take?">
-				All glasswork from august glass designs is completely handmade. Smaller items will generally take 5 to 7 days before dispatching. Larger items, multiple orders and custom orders will take up to 3 weeks before dispatch. I will always try to accommodate a speedy order request, for something that is needed sooner!
-			</Accordion>
-			<Accordion name="How can I request a custom order?">
-				Wholesale orders are welcome. 
-				<br>
-				Please <Link href="/contact" variant="link">contact me</Link> for more information
-			</Accordion>
-		</div>
-	</section>
-	<section class="space-y-12 md:space-y-12">
-		<div>
-			<h2>shop reviews</h2>
-			<p>I average 5 stars on Etsy!</p>
-		</div>
-		<div class="space-y-8 md:space-y-10">
-			<div class="grid md:grid-cols-2 gap-4">
-				<Review
-					name="Helen"
-					message="Love this glass storage. Looks amazing. Beautifully made. Was packaged really well and arrived quickly and safely. Would definitely recommend. Thank you"
-					rating={5}
-					item="/items/k.jpg"
-				/>
-				<Review
-					name="Sarah"
-					message="I'm a regular customer as the products are always of a very good, consistent quality. Exactly what I need them for. Thank you!"
-					rating={5}
-					item="/items/a.jpg"
-				/>
-				<Review
-					name="Gill"
-					message="Beautiful silver glass box. Used to display my special ghost. Arrived extremely well packaged. I’m very pleased, thank you."
-					rating={5}
-					item="/items/g.jpg"
-				/>
-				<Review
-					name="Anthony"
-					message="Jacky has been fantastic. I love my glass pyramid; it looks fabulous with my collection of little ceramic eggs! Totally brilliant service from Jacky from start to finish. I am totally impressed! TMD"
-					rating={5}
-					item="/items/m.jpg"
-				/>
-			</div>
-			<Link href="https://www.etsy.com/uk/shop/AugustGlassDesigns?ref=profile_header#reviews" variant="primary" external>View More (1000+)</Link>
-		</div>
-	</section>
-	<section class="space-y-12 md:space-y-12">
-		<div>
-			<h2>my blog</h2>
-			<p>Click a card below to go to a recent blog article.</p>
-		</div>
-		<div class="space-y-8 md:space-y-10">
-			<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:[&>*]:hidden lg:[&>*:nth-child(-n+3)]:block">
-				{posts.slice(0, 4).map((post, index) => (
-					<BlogCard
-						title={post.frontmatter.title}
-						description={post.frontmatter.description}
-						image={post.frontmatter.image}
-						alt={post.frontmatter.alt}
-						href={post.url}
-						class:list={index === 2 ? "sm:hidden lg:block" : undefined}
-					/>
-				))}
-			</div>
-			<Link href="/blog" variant="primary">View All ({posts.length})</Link>
-		</div>
-	</section>
+  <section class="lg:min-h-screen flex flex-col lg:flex-row gap-32 relative">
+    <div class="space-y-12 md:space-y-12">
+      <h1 class="lg:text-8xl">august glass designs</h1>
+      <div class="space-y-8 md:space-y-10">
+        <p>Welcome to my workshop on the Sussex Coast.</p>
+        <p>
+          I create glass receptacles for your most treasured possessions and I
+          make glass accents for your home from a simple, stylish candle box to
+          an extravagant glass structure in geometric glory.
+        </p>
+        <p>
+          Many years ago a very clever person taught me how to work with glass,
+          using the traditional Tiffany method to create the much loved
+          terrarium. I still use these traditional techniques today, using the
+          same top grade materials to produce top quality products.
+        </p>
+        <p>
+          When I’m not building glass structures, you will find me wandering
+          with my badly behaved ginger dog, obsessing over history, learning to
+          cook, reading and daydreaming.
+        </p>
+        <p>
+          I look forward to working with you.
+          <br />
+          - Jacky
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <Link
+          href="https://www.etsy.com/uk/shop/AugustGlassDesigns#items"
+          variant="primary"
+          external>Browse the Shop</Link
+        >
+        <Link href="/contact" variant="secondary">Contact Me</Link>
+      </div>
+    </div>
+    <aside
+      class="sticky lg:top-16 left-0 flex flex-col lg:flex-row gap-4 lg:max-h-[calc(100vh-8rem)] max-lg:max-w-[100vw] lg:w-[21rem] max-lg:h-[21rem]"
+    >
+      <ImageCarousel
+        speed="fast"
+        srcs={[
+          "/items/a.jpg",
+          "/items/b.jpg",
+          "/items/c.jpg",
+          "/items/d.jpg",
+          "/items/e.jpg",
+          "/items/f.jpg",
+        ]}
+      />
+      <ImageCarousel
+        speed="normal"
+        srcs={[
+          "/items/g.jpg",
+          "/items/h.jpg",
+          "/items/i.jpg",
+          "/items/j.jpg",
+          "/items/k.jpg",
+          "/items/l.jpg",
+        ]}
+      />
+    </aside>
+  </section>
+  <section
+    class="flex flex-col-reverse sm:grid sm:grid-cols-[auto_auto] sm:place-content-start sm:gap-24 gap-12"
+  >
+    <img
+      src="/made-to-measure.jpg"
+      alt="Made to measure"
+      class="sm:h-0 min-h-full object-cover"
+    />
+    <div class="space-y-6 w-full">
+      <h2>made to measure</h2>
+      <div class="space-y-8 md:space-y-10">
+        <p>One size does not suit all.</p>
+        <p>
+          I have made boxes and cases for all manner of possessions that need
+          the extra space, such as wedding bouquets, museum displays, beloved
+          collections, and even teeny pieces of meteorite. I can create a custom
+          size for you.
+        </p>
+        <p>Please contact me for details of what sizes can be accomplished.</p>
+      </div>
+    </div>
+  </section>
+  <section
+    class="flex flex-col sm:grid sm:grid-cols-[auto_auto] sm:place-content-start sm:gap-24 gap-12"
+  >
+    <div class="space-y-8 w-full">
+      <h2>recycled glass products</h2>
+      <div class="space-y-6 md:space-y-10">
+        <p>
+          These products are made from glass that might already have lived a
+          life in a different form - I will recycle the glass into a new
+          structure.
+        </p>
+        <p>
+          This glass may be sourced from old projects , picture glass, seconds
+          or greenhouse glass. It might have a scratch, a scuff or be off
+          colour. It will show signs of a previous life, but it will be made
+          into excellent, high quality items using the same top materials and
+          dedication.
+        </p>
+      </div>
+    </div>
+    <img
+      src="/recycled-glass-products.jpg"
+      alt="Recycled glass products"
+      class="sm:h-0 min-h-full object-cover"
+    />
+  </section>
+  <section class="space-y-12 md:space-y-12">
+    <div class="text-center">
+      <h2>shop faq</h2>
+      <p>Answers to frequently asked questions.</p>
+    </div>
+    <div class="grid gap-4">
+      <Accordion name="Do you accept returns?">
+        Custom orders cannot be refunded or exchanged unless faulty
+        <br />
+        <br />
+        It is the responsibility of the buyer to cover cost of return postage and
+        packaging, ensuring the item is packed securely and tracking details are
+        retained. Return costs are not refundable.
+      </Accordion>
+      <Accordion name="How do I care for my glasswork?">
+        Over time the lead soldered seams on your glasswork may need a freshen
+        up to revive the shine. Simply add a little natural shoe polish to the
+        seams and buff with a soft cloth. The glass can be polished with a clean
+        soft cloth.
+      </Accordion>
+      <Accordion name="How long will my order take?">
+        All glasswork from august glass designs is completely handmade. Smaller
+        items will generally take 5 to 7 days before dispatching. Larger items,
+        multiple orders and custom orders will take up to 3 weeks before
+        dispatch. I will always try to accommodate a speedy order request, for
+        something that is needed sooner!
+      </Accordion>
+      <Accordion name="How can I request a custom order?">
+        Wholesale orders are welcome.
+        <br />
+        Please contact me for more information
+      </Accordion>
+    </div>
+  </section>
+  <section class="space-y-12 md:space-y-12">
+    <div>
+      <h2>shop reviews</h2>
+      <p>I average 5 stars on Etsy!</p>
+    </div>
+    <div class="space-y-8 md:space-y-10">
+      <div class="grid md:grid-cols-2 gap-4">
+        <Review
+          name="Helen"
+          message="Love this glass storage. Looks amazing. Beautifully made. Was packaged really well and arrived quickly and safely. Would definitely recommend. Thank you"
+          rating={5}
+          item="/items/k.jpg"
+        />
+        <Review
+          name="Sarah"
+          message="I'm a regular customer as the products are always of a very good, consistent quality. Exactly what I need them for. Thank you!"
+          rating={5}
+          item="/items/a.jpg"
+        />
+        <Review
+          name="Gill"
+          message="Beautiful silver glass box. Used to display my special ghost. Arrived extremely well packaged. I’m very pleased, thank you."
+          rating={5}
+          item="/items/g.jpg"
+        />
+        <Review
+          name="Anthony"
+          message="Jacky has been fantastic. I love my glass pyramid; it looks fabulous with my collection of little ceramic eggs! Totally brilliant service from Jacky from start to finish. I am totally impressed! TMD"
+          rating={5}
+          item="/items/m.jpg"
+        />
+      </div>
+      <Link
+        href="https://www.etsy.com/uk/shop/AugustGlassDesigns?ref=profile_header#reviews"
+        variant="primary"
+        external>View More (1200+)</Link
+      >
+    </div>
+  </section>
+  <section class="space-y-12 md:space-y-12">
+    <div>
+      <h2>my blog</h2>
+      <p>Click a card below to go to a recent blog article.</p>
+    </div>
+    <div class="space-y-8 md:space-y-10">
+      <div
+        class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:[&>*]:hidden lg:[&>*:nth-child(-n+3)]:block"
+      >
+        {
+          posts
+            .slice(0, 4)
+            .map((post, index) => (
+              <BlogCard
+                title={post.frontmatter.title}
+                description={post.frontmatter.description}
+                image={post.frontmatter.image}
+                alt={post.frontmatter.alt}
+                href={post.url}
+                class:list={index === 2 ? "sm:hidden lg:block" : undefined}
+              />
+            ))
+        }
+      </div>
+      <Link href="/blog" variant="primary">View All ({posts.length})</Link>
+    </div>
+  </section>
 </Layout>
