@@ -1,20 +1,24 @@
 ---
+import { Image } from "astro:assets"
+
+import defaultAvatarJpg from "~/assets/default-avatar.jpg"
+
 interface Props {
   name: string
   message: string
   rating: 1 | 2 | 3 | 4 | 5
-  item: `/items/${string}.jpg`
+  img: ImageMetadata
 }
 
-const { name, message, rating, item } = Astro.props
+const { name, message, rating, img } = Astro.props
 ---
 
 <div class="space-y-6 p-4 border rounded-md shadow-lg">
   <div class="flex justify-between">
     <div class="flex gap-4">
-      <img
-        src="/default_avatar.png"
-        alt="User Avatar"
+      <Image
+        src={defaultAvatarJpg}
+        alt=""
         class="border rounded-full h-12 w-12 sm:h-[75px] sm:w-[75px]"
       />
       <div class="flex flex-col justify-center sm:gap-1">
@@ -78,9 +82,9 @@ const { name, message, rating, item } = Astro.props
         </div>
       </div>
     </div>
-    <img
-      src={item}
-      alt="Item Bought"
+    <Image
+      src={img}
+      alt=""
       class="h-12 w-12 sm:h-[75px] sm:w-[75px]"
     />
   </div>

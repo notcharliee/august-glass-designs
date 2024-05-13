@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets"
+
 interface Props {
-  srcs: `/items/${string}.jpg`[]
+  srcs: ImageMetadata[]
   speed?: "slow" | "normal" | "fast"
 }
 
@@ -19,7 +21,7 @@ const carouselAnimationSpeed =
   >
     {
       srcs.map((src) => (
-        <img
+        <Image
           src={src}
           alt=""
           class="object-cover w-full lg:h-[200px] max-lg:h-[10rem]"
@@ -28,7 +30,7 @@ const carouselAnimationSpeed =
     }
     {
       srcs.map((src) => (
-        <img
+        <Image
           src={src}
           alt=""
           aria-hidden="true"

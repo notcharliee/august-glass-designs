@@ -1,11 +1,31 @@
 ---
-import Layout from "~/layouts/Layout.astro"
+import { Image } from 'astro:assets'
 
+import Layout from "~/layouts/Layout.astro"
 import Accordion from "~/layouts/Accordion.astro"
+
 import BlogCard from "~/components/BlogCard.astro"
 import ImageCarousel from "~/components/ImageCarousel.astro"
 import Link from "~/components/Link.astro"
 import Review from "~/components/Review.astro"
+
+import madeToMeasureJpg from "~/assets/made-to-measure.jpg"
+import recycledGlassProductsJpg from "~/assets/recycled-glass-products.jpg"
+
+import carouselImageJpgA from "~/assets/carousel/A.jpg"
+import carouselImageJpgB from "~/assets/carousel/B.jpg"
+import carouselImageJpgC from "~/assets/carousel/C.jpg"
+import carouselImageJpgD from "~/assets/carousel/D.jpg"
+import carouselImageJpgE from "~/assets/carousel/E.jpg"
+import carouselImageJpgF from "~/assets/carousel/F.jpg"
+import carouselImageJpgG from "~/assets/carousel/G.jpg"
+import carouselImageJpgH from "~/assets/carousel/H.jpg"
+import carouselImageJpgI from "~/assets/carousel/I.jpg"
+import carouselImageJpgJ from "~/assets/carousel/J.jpg"
+import carouselImageJpgK from "~/assets/carousel/K.jpg"
+import carouselImageJpgL from "~/assets/carousel/L.jpg"
+import carouselImageJpgM from "~/assets/carousel/M.jpg"
+import carouselImageJpgN from "~/assets/carousel/N.jpg"
 
 const posts = await Astro.glob("./blog/**/*.md")
 ---
@@ -53,23 +73,25 @@ const posts = await Astro.glob("./blog/**/*.md")
       <ImageCarousel
         speed="fast"
         srcs={[
-          "/items/a.jpg",
-          "/items/b.jpg",
-          "/items/c.jpg",
-          "/items/d.jpg",
-          "/items/e.jpg",
-          "/items/f.jpg",
+          carouselImageJpgA,
+          carouselImageJpgB,
+          carouselImageJpgC,
+          carouselImageJpgD,
+          carouselImageJpgE,
+          carouselImageJpgF,
+          carouselImageJpgG,
         ]}
       />
       <ImageCarousel
         speed="normal"
         srcs={[
-          "/items/g.jpg",
-          "/items/h.jpg",
-          "/items/i.jpg",
-          "/items/j.jpg",
-          "/items/k.jpg",
-          "/items/l.jpg",
+          carouselImageJpgH,
+          carouselImageJpgI,
+          carouselImageJpgJ,
+          carouselImageJpgK,
+          carouselImageJpgL,
+          carouselImageJpgM,
+          carouselImageJpgN,
         ]}
       />
     </aside>
@@ -77,8 +99,8 @@ const posts = await Astro.glob("./blog/**/*.md")
   <section
     class="flex flex-col-reverse sm:grid sm:grid-cols-[auto_auto] sm:place-content-start sm:gap-24 gap-12"
   >
-    <img
-      src="/made-to-measure.jpg"
+    <Image
+      src={madeToMeasureJpg}
       alt="Made to measure"
       class="sm:h-0 min-h-full object-cover"
     />
@@ -116,8 +138,8 @@ const posts = await Astro.glob("./blog/**/*.md")
         </p>
       </div>
     </div>
-    <img
-      src="/recycled-glass-products.jpg"
+    <Image
+      src={recycledGlassProductsJpg}
       alt="Recycled glass products"
       class="sm:h-0 min-h-full object-cover"
     />
@@ -167,25 +189,25 @@ const posts = await Astro.glob("./blog/**/*.md")
           name="Helen"
           message="Love this glass storage. Looks amazing. Beautifully made. Was packaged really well and arrived quickly and safely. Would definitely recommend. Thank you"
           rating={5}
-          item="/items/k.jpg"
+          img={carouselImageJpgK}
         />
         <Review
           name="Sarah"
           message="I'm a regular customer as the products are always of a very good, consistent quality. Exactly what I need them for. Thank you!"
           rating={5}
-          item="/items/a.jpg"
+          img={carouselImageJpgA}
         />
         <Review
           name="Gill"
           message="Beautiful silver glass box. Used to display my special ghost. Arrived extremely well packaged. I’m very pleased, thank you."
           rating={5}
-          item="/items/g.jpg"
+          img={carouselImageJpgN}
         />
         <Review
           name="Anthony"
           message="Jacky has been fantastic. I love my glass pyramid; it looks fabulous with my collection of little ceramic eggs! Totally brilliant service from Jacky from start to finish. I am totally impressed! TMD"
           rating={5}
-          item="/items/m.jpg"
+          img={carouselImageJpgM}
         />
       </div>
       <Link

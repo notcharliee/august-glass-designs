@@ -3,7 +3,7 @@ layout: ~/layouts/BlogPost.astro
 title: "Fairs and Markets"
 description: "I regularly sell at Paper Daisy events, particularly the Christmas markets they host at The Shoreham Centre and at Bhasvic."
 image: "/blog/a.jpg"
-alt: "Custom Order"
+alt: "Fairs and Markets"
 ---
 
 I regularly sell at Paper Daisy events, particularly the Christmas markets they host at The Shoreham Centre and at Bhasvic.
