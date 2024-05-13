@@ -4,4 +4,5 @@
   "javascript.preferences.quoteStyle": "double",
   "typescript.preferences.quoteStyle": "double",
   "editor.tabSize": 2,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
