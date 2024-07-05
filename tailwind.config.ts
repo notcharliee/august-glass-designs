@@ -19,10 +19,10 @@ const config: Config = {
         primary: ["Geist Mono", "monospace"],
       },
       height: {
-        "screen-minus-header": "calc(100vh - 4rem)",
+        "screen-minus-header": "calc(100dvh - 4rem)",
       },
       maxHeight: {
-        "screen-minus-header": "calc(100vh - 4rem)",
+        "screen-minus-header": "calc(100dvh - 4rem)",
       },
       keyframes: {
         "accordion-down": {
