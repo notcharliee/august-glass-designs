@@ -2,7 +2,6 @@
 "use client"
 
 import Image from "next/image"
-import type { Metadata } from "next"
 
 import * as assets from "~/assets/_carousel"
 
@@ -12,10 +11,6 @@ import { Pager } from "~/components/pager"
 import { useMediaQuery } from "~/hooks/use-media-query"
 
 import { splitArray } from "~/lib/utils"
-
-export const metadata: Metadata = {
-  title: "Home",
-}
 
 export default function Home() {
   const isTabletLayout = useMediaQuery("(max-width: 1024px)")
